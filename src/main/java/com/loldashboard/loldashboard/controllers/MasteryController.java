@@ -30,13 +30,13 @@ public class MasteryController {
         if (response.getStatusCode() == HttpStatus.OK) {
             List<ChampionMasteryDto> allMastery = response.getBody();
             if (allMastery != null) {
-                System.out.println("Champion information: ");
+                System.out.println("Champion information: " + allMastery);
                 return allMastery;
             } else {
-                System.out.println("No account information found for gameName");
+                System.out.println("No mastery information found for encryptedPUUID" + encryptedPUUID);
             }
         } else {
-            System.out.println("Failed to retrieve account information. Status code: " + response.getStatusCodeValue());
+            System.out.println("Failed to retrieve mastery information. Status code: " + response.getStatusCodeValue());
         }
         return null;
     }
@@ -47,13 +47,13 @@ public class MasteryController {
         if (response.getStatusCode() == HttpStatus.OK) {
             int totalScore = response.getBody();
             if (totalScore > 0) {
-                System.out.println("Champion information: " + totalScore);
+                System.out.println("Total score: " + totalScore);
                 return totalScore;
             } else {
-                System.out.println("No account information found for gameName");
+                System.out.println("No total score found for encryptedPUUID" + encryptedPUUID);
             }
         } else {
-            System.out.println("Failed to retrieve account information. Status code: " + response.getStatusCodeValue());
+            System.out.println("Failed to retrieve  total score. Status code: " + response.getStatusCodeValue());
         }
         return 0;
     }

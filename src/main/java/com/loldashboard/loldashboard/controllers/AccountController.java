@@ -42,10 +42,10 @@ public class AccountController {
         if (response.getStatusCode() == HttpStatus.OK) {
             SummonerDTO dto = response.getBody();
             if (dto != null) {
-                System.out.println("Champion information: " + dto);
+                System.out.println("account information: " + dto);
                 return dto;
             } else {
-                System.out.println("No account information found for gameName: " + encryptedPUUID);
+                System.out.println("No account information found for encryptedPUUID: " + encryptedPUUID);
             }
         } else {
             System.out.println("Failed to retrieve account information. Status code: " + response.getStatusCodeValue());
